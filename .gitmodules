@@ -1,3 +1,6 @@
 [submodule "logbook-writer"]
 	path = logbook-writer
 	url = https://github.com/oliver-ostojic/logbook-writer.git
+[submodule "portfolio-site"]
+	path = portfolio-site
+	url = https://github.com/oliver-ostojic/portfolio-site.git
