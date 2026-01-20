@@ -1,0 +1,3 @@
+[submodule "logbook-writer"]
+	path = logbook-writer
+	url = https://github.com/oliver-ostojic/logbook-writer.git
