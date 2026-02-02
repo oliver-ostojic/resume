@@ -52,3 +52,34 @@ pnpm dev  # Starts on :3000
 ## Current Focus
 
 Building a unified portfolio experience by overlaying logbook-writer's glass UI components onto the portfolio site background.
+
+## Incremental Development Rules
+
+**CRITICAL: Follow these rules to prevent bug accumulation.**
+
+### After Every Edit
+1. Run the build/compile immediately after each code change
+2. Fix any errors before making the next edit
+3. Never batch multiple changes without verifying each one compiles
+
+### For Large Refactors (moving 50+ lines)
+1. Break into small steps (move 10-20 lines at a time)
+2. Compile after each step
+3. If moving JSX: count opening and closing tags before and after
+
+### Debugging Bracket/Tag Mismatches
+Use TypeScript directly for better errors:
+```bash
+cd apps/web && npx tsc --noEmit path/to/file.tsx
+```
+
+Count JSX tags:
+```bash
+sed -n 'START,ENDp' file.tsx | grep -c '<div'
+sed -n 'START,ENDp' file.tsx | grep -c '</div>'
+```
+
+Track brace depth line-by-line:
+```bash
+awk '{for(i=1;i<=length($0);i++){c=substr($0,i,1);if(c=="{")d++;if(c=="}")d--}print NR": "d}' file.tsx | tail -20
+```
