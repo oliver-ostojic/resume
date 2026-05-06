@@ -53,6 +53,19 @@ pnpm dev  # Starts on :3000
 
 Building a unified portfolio experience by overlaying logbook-writer's glass UI components onto the portfolio site background.
 
+## Verify Before Stating
+
+**CRITICAL: Do not present inferences as facts.**
+
+When resuming from a conversation summary, a compaction, or any compressed context:
+
+1. **Re-read the actual files** before making claims about how the code works. Summaries are stale by design.
+2. **Distinguish reading from inferring.** If you read it in a file or command output, say so. If you inferred it from a commit message or summary, say "I'm inferring" — never state it flat.
+3. **Verify before recommending a fix.** If your reasoning depends on a function, field, or behavior existing, grep/read it first. Don't trust the summary to have it right.
+4. **Don't chain inferences.** One unverified assumption building on another is how wrong fixes ship.
+
+This applies especially to: solver/builder behavior, schema fields, payload shapes, and anything involving multiple files where the summary only quoted one.
+
 ## Incremental Development Rules
 
 **CRITICAL: Follow these rules to prevent bug accumulation.**
